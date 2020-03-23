@@ -7,3 +7,13 @@ it('renders without crashing', () => {
   ReactDOM.render(<App />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
+
+test("renders playerCards/player's informations", () => {
+  const container = render(<Player />);
+  console.log("bk: container: ", container);
+
+  //container.getByText("Players");
+  container.getByText(/Players/i);
+ 
+});
+
