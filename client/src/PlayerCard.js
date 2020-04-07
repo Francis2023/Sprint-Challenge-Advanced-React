@@ -1,9 +1,13 @@
 import React from "react";
 import useDarkMode from "./useDarkMode"
 
-const [ theme, toggleTheme ] = useDarkMode()
+
 
 const PlayerCard = props => {
+    
+    console.log(props)
+    const [ theme, toggleTheme ] = useDarkMode()
+
     return (
             <div
               style={{

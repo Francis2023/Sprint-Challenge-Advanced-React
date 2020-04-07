@@ -1,22 +1,13 @@
 import React from "react";
 import PlayerCard from "./PlayerCard"
 
-const dark = dark`
- body{
-    background-color: black;
-    color: white;
- } 
-`
-const light = light`
- body{
-    background-color: white;
-    color: black;
- } 
-`
+
+
 
 class App extends React.Component {
 
     
+  
     constructor() {
         super();
         this.state = {
@@ -24,6 +15,8 @@ class App extends React.Component {
           
         }
       }
+
+      
 
       componentDidMount() {
         fetch("http://localhost:5000/api/players")
@@ -41,7 +34,9 @@ class App extends React.Component {
           return (
               <div>
                   <h2>Players</h2>
-                  <PlayerCard playerData={this.state.playerData} />
+                  {this.state.playerData.map(playerData => (
+                  <PlayerCard playerData={playerData} />
+                  ))}
               </div>
           )
 
